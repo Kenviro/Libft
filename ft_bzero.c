@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
+#include <stdlib.h>
 
 void	bzero(void *s, size_t n)
 {
@@ -23,4 +24,23 @@ void	bzero(void *s, size_t n)
 		ptr[i] = 0;
 		i++;
 	}
+}
+
+void	*calloc(size_t num, size_t size)
+{
+	unsigned char	*ptr;
+	size_t			i;
+	size_t			total_size;
+
+	i = 0;
+	total_size = num * size;
+	ptr = (unsignder char *)malloc(total_size);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < total_size)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return ((void *)ptr);
 }
