@@ -24,7 +24,8 @@ int	ft_atoi(char *str)
 		i++;
 	if (str[i] == '-')
 		negative *= -1;
-	i++;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if (result > (INT_MAX - (str[i] - '0')) / 10)
