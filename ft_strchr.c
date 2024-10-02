@@ -34,13 +34,13 @@ char	*ft_strrchr(char *str, char c)
 	i = 0;
 	while (str[i])
 		i++;
+	if (c == '\0')
+		return (&str[i]);
 	while (i >= 0)
 	{
 		if (str[i] == c)
 			return (&str[i]);
 		i--;
 	}
-	if (c == '\0')
-		return (&str[i]);
 	return (NULL);
 }
