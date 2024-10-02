@@ -29,7 +29,7 @@ char	*ft_strchr(char *str, char c)
 
 char	*ft_strrchr(char *str, char c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (str[i])
