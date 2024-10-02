@@ -9,8 +9,7 @@
 /*   Updated: 2024/10/01 15:28:03 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	bzero(void *s, size_t n)
 {

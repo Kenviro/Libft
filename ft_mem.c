@@ -9,8 +9,7 @@
 /*   Updated: 2024/10/01 15:27:54 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int c, size_t len)
 {
@@ -29,7 +28,7 @@ void	*ft_memset(void *ptr, int c, size_t len)
 	return (ptr);
 }
 
-void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	size_t			i;
 	unsigned char	*d;
@@ -46,7 +45,7 @@ void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
 	return (dst);
 }
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*d;
 	unsigned char	*s;
@@ -74,7 +73,7 @@ void	*memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	c1;
 	unsigned char	*s1;
@@ -92,7 +91,7 @@ void	*memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
