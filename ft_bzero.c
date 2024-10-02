@@ -34,7 +34,7 @@ void	*calloc(size_t num, size_t size)
 
 	i = 0;
 	total_size = num * size;
-	ptr = (unsignder char *)malloc(total_size);
+	ptr = (unsigned char *)malloc(total_size);
 	if (ptr == NULL)
 		return (NULL);
 	while (i < total_size)

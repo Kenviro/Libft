@@ -41,7 +41,7 @@ char	*ft_strnstr(char *str, char *to_find, int n)
 		j = 0;
 		while (str[i + j] == to_find[j] && (i + j) < n && to_find[j] != '\0')
 			j++;
-		if (to_find == '\0')
+		if (*to_find == '\0')
 			return (&str[i]);
 	}
 	return (0);
