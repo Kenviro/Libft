@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_str_f.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktintim- <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:28:02 by ktintim-          #+#    #+#             */
-/*   Updated: 2024/10/01 15:28:03 by ktintim-         ###   ########.fr       */
+/*   Created: 2024/10/03 10:03:56 by ktintim-          #+#    #+#             */
+/*   Updated: 2024/10/03 10:03:57 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*ptr;
-	size_t			i;
+	unsigned int	i;
 
 	i = 0;
-	ptr = (unsigned char *)s;
-	while (i != n)
+	if (!s || !f)
+		return ;
+	while (s[i])
 	{
-		ptr[i] = 0;
+		f(i, &s[i]);
 		i++;
 	}
 }
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*ptr;
-	size_t			i;
-	size_t			total_size;
+	unsigned int	i;
+	char			*s2;
 
 	i = 0;
-	total_size = num * size;
-	ptr = (unsigned char *)malloc(total_size);
-	if (ptr == NULL)
+	if (!s || !f)
 		return (NULL);
-	while (i < total_size)
+	s2 = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!s2)
+		return (NULL);
+	while (s[i])
 	{
-		ptr[i] = 0;
+		s2[i] = f(i, s[i]);
 		i++;
 	}
-	return ((void *)ptr);
+	s2[i] = '\0';
+	return (s2);
 }

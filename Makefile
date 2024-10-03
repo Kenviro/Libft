@@ -2,18 +2,19 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILES = ft_str.c ft_is.c ft_atoi.c ft_bzero.c ft_mem.c ft_strchr.c ft_strl.c ft_to.c
+FILES = ft_atoi.c ft_str.c ft_bzero.c ft_is.c ft_mem.c ft_put.c ft_str_f.c ft_strchr.c ft_strl.c ft_strtim.c ft_to.c ft_split.c ft_substr.c
 
 O_FILES = $(FILES:.c=.o)
 
-EXE = libft.a
+HEADERS = libft.h
 
-all: $(EXE)
-$(EXE) : $(O_FILES)
-	ar rcs $(EXE) $(O_FILES)
-	ranlib $(EXE)
+NAME = libft.a
 
-%.o: %.c
+all: $(NAME)
+$(NAME) : $(O_FILES)
+	ar rcs $(NAME) $(O_FILES)
+
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

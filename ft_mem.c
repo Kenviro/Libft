@@ -34,6 +34,8 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!dst && !src && n > 0)
+		return (NULL);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;
@@ -104,8 +106,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	while (i < n)
 	{
-		if (ptr1 != ptr2)
-			return (ptr1 - ptr2);
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
 	}
 	return (0);

@@ -27,9 +27,10 @@ int	ft_isdigit(int c)
 
 int	ft_isalnum(int c)
 {
-	if ((c < 91 && c > 64) || (c < 123 && c > 96))
-		if (c < 58 && c > 47)
-			return (1);
+	if ((c <= '9' && c >= '0'))
+		return (1);
+	if ((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a'))
+		return (1);
 	return (0);
 }
 
@@ -42,7 +43,7 @@ int	ft_isascii(int c)
 
 int	ft_isprint(int c)
 {
-	if (c < 127 && c >= 31)
+	if (c < 127 && c > 31)
 		return (1);
 	return (0);
 }
