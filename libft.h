@@ -39,7 +39,7 @@ int				ft_tolower(int c);
 int				ft_iterative_power(int nb, int power);
 int				ft_lstsize(t_list *lst);
 void			*ft_memset(void *ptr, int c, size_t len);
-void			*ft_memcpy(void *restrict dst, const void *restrict src, \
+void			*ft_memcpy(void *dst, const void *src, \
 							size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);

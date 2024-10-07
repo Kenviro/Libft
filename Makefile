@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 FILES = ft_atoi.c ft_str.c ft_bzero.c ft_is.c ft_mem.c ft_put.c ft_str_f.c ft_strchr.c \
 ft_strl.c ft_strtim.c ft_to.c ft_split.c ft_substr.c
@@ -16,6 +16,10 @@ HEADERS = libft.h
 NAME = libft.a
 
 all: $(NAME)
+
+bonus : $(O_BONUS) $(O_FILES)
+	ar rcs $(NAME) $(O_BONUS) $(O_FILES)
+
 $(NAME) : $(O_FILES)
 	ar rcs $(NAME) $(O_FILES)
 
@@ -30,8 +34,4 @@ fclean: clean
 
 re : fclean all
 
-bonus : $(NAME)
-$(NAME) : $(O_BONUS) $(O_FILES)
-	ar rcs $(NAME) $(O_BONUS) $(O_FILES)
-
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
