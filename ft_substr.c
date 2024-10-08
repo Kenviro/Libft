@@ -25,7 +25,7 @@ char	*subloop(char const *s, unsigned int start, size_t len, char *end)
 			end[j] = s[i];
 			j++;
 		}
-	i++;
+		i++;
 	}
 	end[j] = '\0';
 	return (end);
@@ -43,7 +43,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		end = (char *)malloc(1);
 		if (end)
-		end[0] = '\0';
+			end[0] = '\0';
 		return (end);
 	}
 	if (len > i - start)

@@ -47,7 +47,7 @@ int	loop(int i, char n[12], int nb)
 	{
 		n[i] = (nb % 10) + 48;
 		nb /= 10;
-			i--;
+		i--;
 	}
 	return (i);
 }

@@ -38,7 +38,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (result * negative);
-}		
+}
 
 int	ft_numlen(int n)
 {
