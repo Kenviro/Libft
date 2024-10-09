@@ -18,7 +18,8 @@ void	ft_free_all(char **result, int words_allocated)
 	i = 0;
 	while (i < words_allocated)
 	{
-		free(result[i]);
+		if (result[i])
+			free(result[i]);
 		i++;
 	}
 	free(result);
@@ -27,55 +28,68 @@ void	ft_free_all(char **result, int words_allocated)
 int	nb_sep(char const *str, char sep)
 {
 	int	i;
-	int	j;
+	int	words;
 
 	i = 0;
-	j = 0;
+	words = 0;
 	while (str[i])
 	{
-		if (str[i] == sep)
-			j++;
+		if (str[i] != sep && (i == 0 || str[i - 1] == sep))
+			words++;
 		i++;
 	}
-	if (j != 0)
-		j++;
-	return (j);
+	return (words);
 }
 
-char	*ft_word_dup(char const *str, int *i[2], int finish)
+char	*ft_word_dup(char const *str, int *start, int finish)
 {
 	char	*word;
 	int		j;
+	int		s;
 
+	s = *start;
 	j = 0;
-	word = (char *)malloc((finish - *i[2] + 1) * sizeof(char));
+	word = (char *)malloc((finish - s + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
-	while (*i[2] < finish)
-		word[j++] = str[*i[2]++];
+	while (s < finish)
+		word[j++] = str[s++];
 	word[j] = '\0';
-	i[2] = -1;
+	*start = -1;
 	return (word);
+}
+
+char	**allocate_result(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	result = (char **)malloc((nb_sep(s, c) + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int		*i[3];
+	int		i[3];
 
 	i[0] = -1;
 	i[1] = 0;
 	i[2] = -1;
-	(!s || !(result = (char **)malloc((nb_sep(s, c) + 1) * sizeof(char *))))
-	return (NULL);
+	result = allocate_result(s, c);
+	if (!result)
+		return (NULL);
 	while (++i[0] <= ft_strlen(s))
 	{
 		if (s[i[0]] != c && i[2] < 0)
 			i[2] = i[0];
 		else if ((s[i[0]] == c || i[0] == ft_strlen(s)) && i[2] >= 0)
 		{
-			result[i[1]++] = ft_word_dup(s, *i[2], i[0]);
-			if (!result[i[1]])
+			result[i[1]] = ft_word_dup(s, &i[2], i[0]);
+			if (!result[i[1]++])
 			{
 				ft_free_all(result, i[1]);
 				return (NULL);
