@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktintim- <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ktintim- <ktintim-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:24:28 by ktintim-          #+#    #+#             */
-/*   Updated: 2024/10/01 11:24:32 by ktintim-         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:39:51 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_strlen(const char *str)
 {
@@ -64,4 +64,39 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

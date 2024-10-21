@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktintim- <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ktintim- <ktintim-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:37:30 by ktintim-          #+#    #+#             */
-/*   Updated: 2024/10/02 17:37:35 by ktintim-         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:40:55 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strcat(char *dest, char *src);
+char			*ft_strcpy(char *dest, char *src);
 char			**ft_split(char const *s, char c);
 unsigned int	ft_strlcat(char *src, char *dest, unsigned int size);
 unsigned int	ft_strlcpy(char *dest, char const *src, unsigned int size);
