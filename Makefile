@@ -8,16 +8,11 @@ ft_pointerprintf.c ft_printf.c put_printf.c putnbrbase_printf.c putunsignednbr.c
 
 O_FILES = $(FILES:.c=.o)
 
-O_BONUS = $(C_BONUS:.c=.o)
-
 HEADERS = libft.h
 
 NAME = libft.a
 
 all: $(NAME)
-
-bonus : $(O_BONUS) $(O_FILES)
-	ar rcs $(NAME) $(O_BONUS) $(O_FILES)
 
 $(NAME) : $(O_FILES)
 	ar rcs $(NAME) $(O_FILES)
