@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktintim- <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ktintim- <ktintim-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:05:18 by ktintim-          #+#    #+#             */
-/*   Updated: 2024/10/03 11:05:19 by ktintim-         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:23:09 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 const char	*strchr_ftf(char const *str, char c)

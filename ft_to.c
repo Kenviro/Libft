@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_to.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktintim- <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ktintim- <ktintim-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:28:45 by ktintim-          #+#    #+#             */
-/*   Updated: 2024/10/01 15:28:57 by ktintim-         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:23:14 by ktintim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_toupper(int c)
